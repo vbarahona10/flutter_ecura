@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizstar/home.dart';
+import 'package:quizstar/src/pages/login_page.dart';
 import 'details_screen.dart';
 
 class mainDrawer extends StatelessWidget {
@@ -83,6 +84,22 @@ class mainDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => DetailsScreen(),
+                  ));
+              //Navigator.pushNamed(context, '/details_screen');
+              //Navigator.of(context).pushNamed(DetailsScreen.routename);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.verified_user),
+            title: Text('Ingresar',
+                style: TextStyle(
+                  fontSize: 18,
+                )),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(),
                   ));
               //Navigator.pushNamed(context, '/details_screen');
               //Navigator.of(context).pushNamed(DetailsScreen.routename);

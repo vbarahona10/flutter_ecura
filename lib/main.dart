@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:quizstar/splash.dart';
+import 'package:quizstar/src/bloc/provider.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "ECURA",
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
+    return Provider(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "ECURA",
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+        ),
+        home: splashscreen(),
       ),
-      home: splashscreen(),
     );
   }
 }
