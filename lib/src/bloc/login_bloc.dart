@@ -22,6 +22,7 @@ class LoginBloc with Validators {
   String get password => _passwordController.value;
 
   dispose() {
+    print('prueba de git');
     _emailController?.close();
     _passwordController?.close();
   }
