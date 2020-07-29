@@ -1,5 +1,4 @@
 # Quizstar !
-
   
 
 This is a **Complete Quiz App in FLUTTER** using a lot of features such as
