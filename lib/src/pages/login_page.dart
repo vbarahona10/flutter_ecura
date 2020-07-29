@@ -42,7 +42,7 @@ class LoginPage extends StatelessWidget {
                 height: 10.0,
                 width: double.infinity,
               ),
-              Text('Ecura - Security APP',
+              Text('Ecura - Security Application',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 25.0,
