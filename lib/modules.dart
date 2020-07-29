@@ -2,24 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quizstar/main_drawer.dart';
 import 'package:quizstar/quizpage.dart';
+import 'package:quizstar/src/pages/spam.dart';
 import './main_drawer.dart';
+import 'details_screen.dart';
+import 'details_screen.dart';
+import 'details_screen.dart';
+import 'details_screen.dart';
+import 'home.dart';
 
-class homepage extends StatefulWidget {
+class Modules extends StatefulWidget {
   @override
-  _homepageState createState() => _homepageState();
+  _moduleState createState() => _moduleState();
 }
 
-class _homepageState extends State<homepage> {
+class _moduleState extends State<Modules> {
   List<String> images = [
-    "images/spam.png",
-    "images/teletrabajo.jpg",
-    "images/wifi.jpg",
+    "images/huevo.jpg",
+    "images/pollito.jpg",
+    "images/gallo.jpg",
   ];
 
   List<String> des = [
-    "SPAM son mensajes no solicitados, sobre todo de tipo publicitario, y que son enviados de forma masiva.",
-    "El teletrabajo, o trabajo a distancia, permite trabajar en un lugar diferente a la oficina.",
-    "Wifi, señal inalambrica",
+    "Principiante",
+    "Intermiedio.",
+    "Avanzado",
   ];
 
   Widget customcard(String langname, String image, String des) {
@@ -30,12 +36,28 @@ class _homepageState extends State<homepage> {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-            // in changelog 1 we will pass the langname name to ther other widget class
-            // this name will be used to open a particular JSON file
-            // for a particular language
-            builder: (context) => getjson(langname),
-          ));
+          // Navigator.of(context).pushReplacement(MaterialPageRoute(
+          //   // in changelog 1 we will pass the langname name to ther other widget class
+          //   // this name will be used to open a particular JSON file
+          //   // for a particular language
+          //   builder: (context) => getjson(langname),
+          // ));
+
+          // ESTE ES FUNCIONAL
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => DetailsScreen(),
+          //   ),
+          // );
+          if (langname == 'Principiante') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => homepage(),
+              ),
+            );
+          }
         },
         child: Material(
           color: Colors.indigoAccent,
@@ -113,9 +135,9 @@ class _homepageState extends State<homepage> {
       drawer: mainDrawer(),
       body: ListView(
         children: <Widget>[
-          customcard("SPAM", images[0], des[0]),
-          customcard("Teletrabajo", images[1], des[1]),
-          customcard("Wifi", images[2], des[2]),
+          customcard("Principiante", images[0], des[0]),
+          customcard("Intermedio", images[1], des[1]),
+          customcard("Avanzado", images[2], des[2]),
         ],
       ),
     );
