@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizstar/chatpage.dart';
 import 'package:quizstar/home.dart';
 import 'package:quizstar/src/pages/login_page.dart';
 import 'details_screen.dart';
@@ -104,7 +105,20 @@ class mainDrawer extends StatelessWidget {
               //Navigator.pushNamed(context, '/details_screen');
               //Navigator.of(context).pushNamed(DetailsScreen.routename);
             },
-          )
+          ),
+          ListTile(
+            leading: Icon(Icons.chat),
+            title: Text('Chatea con SecutirityApp',
+                style: TextStyle(
+                  fontSize: 18,
+                )),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => chatpage()));
+              //Navigator.pushNamed(context, '/details_screen');
+              //Navigator.of(context).pushNamed(DetailsScreen.routename);
+            },
+          ),
         ],
       ),
     );
