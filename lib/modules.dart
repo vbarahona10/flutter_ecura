@@ -9,6 +9,7 @@ import 'details_screen.dart';
 import 'details_screen.dart';
 import 'details_screen.dart';
 import 'home.dart';
+import 'home.dart';
 
 class Modules extends StatefulWidget {
   @override

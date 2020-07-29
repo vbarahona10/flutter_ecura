@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quizstar/main_drawer.dart';
 import 'package:quizstar/quizpage.dart';
+import 'package:quizstar/src/pages/spam.dart';
 import './main_drawer.dart';
 
 class homepage extends StatefulWidget {
@@ -30,12 +31,20 @@ class _homepageState extends State<homepage> {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-            // in changelog 1 we will pass the langname name to ther other widget class
-            // this name will be used to open a particular JSON file
-            // for a particular language
-            builder: (context) => getjson(langname),
-          ));
+          // Navigator.of(context).pushReplacement(MaterialPageRoute(
+          //   // in changelog 1 we will pass the langname name to ther other widget class
+          //   // this name will be used to open a particular JSON file
+          //   // for a particular language
+          //   builder: (context) => getjson(langname),
+          // ));
+          if (langname == 'SPAM') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Spam(),
+              ),
+            );
+          }
         },
         child: Material(
           color: Colors.indigoAccent,
