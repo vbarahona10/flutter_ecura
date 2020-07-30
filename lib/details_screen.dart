@@ -45,7 +45,7 @@ class DetailsScreen extends StatelessWidget {
                   ),
                 )),
             RaisedButton(
-              child: Text('Ir a inicio'),
+              child: Text('Ir a Modulos'),
               onPressed: () {
                 Navigator.push(
                     context,

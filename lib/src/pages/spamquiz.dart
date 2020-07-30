@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizstar/main_drawer.dart';
+import 'package:quizstar/modules.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'quiz_logic.dart';
 
@@ -56,9 +57,16 @@ class _QuizPageState extends State<QuizPage> {
               "Ha acertado un total de $totalCorrect de $totalQuestions preguntas!",
           buttons: [
             DialogButton(
-                onPressed: () => Navigator.pop(context),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Modules(),
+                      ));
+                },
+                // => Navigator.pop(context),
                 child: Text(
-                  "Jugar otravez",
+                  "Vuelve a los modulos",
                   style: TextStyle(color: Colors.white, fontSize: 22),
                 ))
           ]).show();

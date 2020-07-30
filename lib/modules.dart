@@ -127,10 +127,7 @@ class _moduleState extends State<Modules> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "ECURA",
-          style: TextStyle(
-            fontFamily: "Quando",
-          ),
+          "MODULOS",
         ),
       ),
       drawer: mainDrawer(),
