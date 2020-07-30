@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quizstar/home.dart';
+import 'package:quizstar/modules.dart';
 import 'package:quizstar/src/pages/login_page.dart';
 import 'details_screen.dart';
+import 'modules.dart';
 
 class mainDrawer extends StatelessWidget {
   @override
@@ -67,7 +69,7 @@ class mainDrawer extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => homepage(),
+                    builder: (context) => Modules(),
                   ));
               //Navigator.pushNamed(context, '/details_screen');
               //Navigator.of(context).pushNamed(DetailsScreen.routename);
