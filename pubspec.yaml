@@ -26,6 +26,7 @@ dependencies:
   cupertino_icons: ^0.1.0
   rxdart: ^0.22.0
   video_player: "^0.5.1"
+  rflutter_alert: ^1.0.3
 
 
 dev_dependencies:

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:quizstar/home.dart';
+import 'package:quizstar/src/pages/spamquiz.dart';
 import 'package:video_player/video_player.dart';
 import '../../main_drawer.dart';
+import 'spamquiz.dart';
 
 //class Spam extends StatelessWidget {
 // @override
@@ -60,27 +63,68 @@ class VideoState extends State<Spam> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('SPAM'),
-      ),
-      drawer: mainDrawer(),
-      body: Center(
-          child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Container(
-                child: (playerController != null
-                    ? VideoPlayer(
-                        playerController,
-                      )
-                    : Container()),
-              ))),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          createVideo();
-          playerController.play();
-        },
-        child: Icon(Icons.play_arrow),
-      ),
-    );
+        appBar: AppBar(
+          title: Text('SPAM'),
+        ),
+        drawer: mainDrawer(),
+        body: Center(
+          child: Column(children: <Widget>[
+            Material(
+              child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Container(
+                    child: (playerController != null
+                        ? VideoPlayer(
+                            playerController,
+                          )
+                        : Container()),
+                  )),
+            ),
+
+            ButtonTheme(
+              height: 60,
+              minWidth: 200,
+              child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                child: Text(
+                  "Ir a preguntas",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SpamQuizz(),
+                      ));
+                },
+              ),
+            ),
+
+            // RaisedButton(
+            //   child: Text('Ir a inicio'),
+            //   onPressed: () {
+            //     Navigator.push(
+            //         context,
+            //         MaterialPageRoute(
+            //           builder: (context) => homepage(),
+            //         ));
+            //     //Navigator.pushNamed(context, '/details_screen');
+            //     //Navigator.of(context).pushNamed(DetailsScreen.routename);
+            //   },
+
+            //   shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(18.0),
+            //       side: BorderSide(color: Colors.amber[800])),
+            // )
+          ]),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            createVideo();
+            playerController.play();
+          },
+          child: Icon(Icons.play_arrow),
+        ));
   }
 }
