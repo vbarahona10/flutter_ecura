@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quizstar/home.dart';
 import 'package:quizstar/modules.dart';
 import 'package:quizstar/src/pages/login_page.dart';
+import 'package:quizstar/src/pages/settings.dart';
 import 'details_screen.dart';
 import 'modules.dart';
 
@@ -86,6 +87,22 @@ class mainDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => DetailsScreen(),
+                  ));
+              //Navigator.pushNamed(context, '/details_screen');
+              //Navigator.of(context).pushNamed(DetailsScreen.routename);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.info),
+            title: Text('Configuracion',
+                style: TextStyle(
+                  fontSize: 18,
+                )),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Settings(),
                   ));
               //Navigator.pushNamed(context, '/details_screen');
               //Navigator.of(context).pushNamed(DetailsScreen.routename);

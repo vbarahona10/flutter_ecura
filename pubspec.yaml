@@ -27,6 +27,7 @@ dependencies:
   rxdart: ^0.22.0
   video_player: "^0.5.1"
   rflutter_alert: ^1.0.3
+  font_awesome_flutter: ^8.8.1
 
 
 dev_dependencies:
