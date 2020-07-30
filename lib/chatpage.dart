@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const String defaultUserName = "Cliente Ecura";
-const String defaultUserName2 = "Cliente Ecura";
+const String defaultUserName = "Ecura Chat";
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -10,7 +9,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Chat Ecura',
       home: new chatpage(),
       theme: new ThemeData(scaffoldBackgroundColor: Color(0xFFFAFAFA)),
     );
@@ -33,7 +31,7 @@ class ChatWindow extends State<chatpage> with TickerProviderStateMixin {
       appBar: new AppBar(
         title: new Text("EcuraChat"),
         elevation: Theme.of(ctx).platform == TargetPlatform.iOS ? 0.0 : 6.0,
-        backgroundColor: Colors.indigo[900],
+        backgroundColor: Colors.indigo,
       ),
       body: new Column(children: <Widget>[
         new Flexible(
@@ -81,7 +79,7 @@ class ChatWindow extends State<chatpage> with TickerProviderStateMixin {
                               ? () => _submitMsg(_textController.text)
                               : null)
                       : new IconButton(
-                          icon: new Icon(Icons.message),
+                          icon: new Icon(Icons.send),
                           onPressed: _isWriting
                               ? () => _submitMsg(_textController.text)
                               : null,

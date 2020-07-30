@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizstar/chat.dart';
 import 'package:quizstar/chatpage.dart';
 import 'package:quizstar/home.dart';
 import 'package:quizstar/src/pages/login_page.dart';
@@ -114,9 +115,20 @@ class mainDrawer extends StatelessWidget {
                 )),
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => chatpage()));
+                  context, MaterialPageRoute(builder: (context) => Chat()));
               //Navigator.pushNamed(context, '/details_screen');
               //Navigator.of(context).pushNamed(DetailsScreen.routename);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('Ajustes',
+                style: TextStyle(
+                  fontSize: 18,
+                )),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Chat()));
             },
           ),
         ],
