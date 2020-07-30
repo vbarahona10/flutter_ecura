@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizstar/home.dart';
 import 'package:quizstar/main_drawer.dart';
+import 'package:quizstar/modules.dart';
 
 class DetailsScreen extends StatelessWidget {
   @override
@@ -44,12 +45,12 @@ class DetailsScreen extends StatelessWidget {
                   ),
                 )),
             RaisedButton(
-              child: Text('Ir a inicio'),
+              child: Text('Ir a Modulos'),
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => homepage(),
+                      builder: (context) => Modules(),
                     ));
                 //Navigator.pushNamed(context, '/details_screen');
                 //Navigator.of(context).pushNamed(DetailsScreen.routename);
