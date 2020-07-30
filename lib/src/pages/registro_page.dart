@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quizstar/home.dart';
 import 'package:quizstar/src/bloc/provider.dart';
-import 'package:quizstar/src/pages/registro_page.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key key}) : super(key: key);
+import 'login_page.dart';
+
+class RegistroPage extends StatelessWidget {
+  const RegistroPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +83,7 @@ class LoginPage extends StatelessWidget {
                 ]),
             child: Column(
               children: <Widget>[
-                Text('Ingreso', style: TextStyle(fontSize: 20.0)),
+                Text('Crear Nueva Cuenta', style: TextStyle(fontSize: 20.0)),
                 SizedBox(height: 60.0),
                 _crearEmail(bloc),
                 SizedBox(height: 30.0),
@@ -94,10 +95,13 @@ class LoginPage extends StatelessWidget {
           ),
           FlatButton(
               onPressed: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => RegistroPage()));
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ));
               },
-              child: Text('Crear cuenta'))
+              child: Text('¿Ya tienes cuenta? Login'))
         ],
       ),
     );
@@ -159,7 +163,7 @@ class LoginPage extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 20.0),
-            child: Text('Ingresar'),
+            child: Text('Crear Cuenta'),
           ),
           elevation: 0.0,
           color: Colors.indigo,

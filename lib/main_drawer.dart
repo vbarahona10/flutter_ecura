@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizstar/home.dart';
 import 'package:quizstar/src/pages/login_page.dart';
+import 'package:quizstar/src/pages/profile_page.dart';
 import 'details_screen.dart';
 
 class mainDrawer extends StatelessWidget {
@@ -55,7 +56,13 @@ class mainDrawer extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                 )),
-            onTap: null,
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PerfilPage(),
+                  ));
+            },
           ),
           ListTile(
             leading: Icon(Icons.games),
