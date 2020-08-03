@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:quizstar/main_drawer.dart';
 import 'package:quizstar/quizpage.dart';
 import 'package:quizstar/src/pages/spam.dart';
+import 'package:quizstar/src/pages/wifi.dart';
 import './main_drawer.dart';
 
 class homepage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _homepageState extends State<homepage> {
   List<String> des = [
     "SPAM son mensajes no solicitados, sobre todo de tipo publicitario, y que son enviados de forma masiva.",
     "El teletrabajo, o trabajo a distancia, permite trabajar en un lugar diferente a la oficina.",
-    "Wifi, señal inalambrica",
+    "Las contraseñas se utilizan para verificar la identidad del usuario, dicha clave debe ser robusta para evitar robos de esta.",
   ];
 
   Widget customcard(String langname, String image, String des) {
@@ -42,6 +43,13 @@ class _homepageState extends State<homepage> {
               context,
               MaterialPageRoute(
                 builder: (context) => Spam(),
+              ),
+            );
+          } else if (langname == 'Wifi') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Wifi(),
               ),
             );
           }
