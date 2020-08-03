@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizstar/home.dart';
 
 class PerfilPage extends StatelessWidget {
   @override
@@ -42,7 +43,7 @@ class PerfilPage extends StatelessWidget {
                             height: 10.0,
                           ),
                           Text(
-                            "Alice James",
+                            "Stan Lee",
                             style: TextStyle(
                               fontSize: 22.0,
                               color: Colors.white,
@@ -153,7 +154,7 @@ class PerfilPage extends StatelessWidget {
                       Text(
                         "Hola:",
                         style: TextStyle(
-                            color: Colors.redAccent,
+                            color: Colors.yellow[700],
                             fontStyle: FontStyle.normal,
                             fontSize: 28.0),
                       ),
@@ -181,7 +182,13 @@ class PerfilPage extends StatelessWidget {
               Container(
                 width: 300.00,
                 child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => homepage(),
+                          ));
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
                     elevation: 0.0,
