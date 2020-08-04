@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:quizstar/home.dart';
-import 'package:quizstar/modules.dart';
-import 'package:quizstar/src/pages/login_page.dart';
-import 'package:quizstar/src/pages/profile_page.dart';
-import 'details_screen.dart';
-import 'modules.dart';
+import 'package:quizstar/src/pages/chatecura/chat.dart';
+import 'package:quizstar/src/pages/modules/modules.dart';
+import 'package:quizstar/src/pages/login/login_page.dart';
+import 'package:quizstar/src/pages/profile/profile_page.dart';
+import 'package:quizstar/src/pages/setting/settings.dart';
+import 'src/pages/profile/acercadepage.dart';
+import 'src/pages/modules/modules.dart';
 
 class mainDrawer extends StatelessWidget {
   @override
@@ -29,11 +30,11 @@ class mainDrawer extends StatelessWidget {
                       children: <Widget>[
                         Material(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(50.0)),
+                                BorderRadius.all(Radius.circular(35.0)),
                             child: Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(9.0),
                               child: Image.asset(
-                                "images/ecura.jpeg",
+                                "images/logo_transparent_background.png",
                                 width: 80,
                                 height: 80,
                               ),
@@ -41,13 +42,6 @@ class mainDrawer extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Text(
-                    'Ecura',
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.white,
-                    ),
-                  )
                 ],
               ),
             ),
@@ -113,7 +107,36 @@ class mainDrawer extends StatelessWidget {
               //Navigator.pushNamed(context, '/details_screen');
               //Navigator.of(context).pushNamed(DetailsScreen.routename);
             },
-          )
+          ),
+          ListTile(
+            leading: Icon(Icons.chat),
+            title: Text('Chatea con SecutirityApp',
+                style: TextStyle(
+                  fontSize: 18,
+                )),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Chat()));
+              //Navigator.pushNamed(context, '/details_screen');
+              //Navigator.of(context).pushNamed(DetailsScreen.routename);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.settings_applications),
+            title: Text('Ajustes',
+                style: TextStyle(
+                  fontSize: 18,
+                )),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Settings(),
+                  ));
+              //Navigator.pushNamed(context, '/details_screen');
+              //Navigator.of(context).pushNamed(DetailsScreen.routename);
+            },
+          ),
         ],
       ),
     );

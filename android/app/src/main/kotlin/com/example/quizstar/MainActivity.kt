@@ -1,4 +1,4 @@
-package com.example.quizstar
+package com.example.ECURA
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

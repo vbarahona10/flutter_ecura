@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quizstar/main_drawer.dart';
-import 'package:quizstar/quizpage.dart';
-import 'package:quizstar/src/pages/spam.dart';
+import 'package:quizstar/src/pages/spam/spam.dart';
+import 'package:quizstar/src/pages/teletrabajo/teletrabajo.dart';
+import 'package:quizstar/src/pages/wifi/wifi.dart';
 import './main_drawer.dart';
 
 class homepage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _homepageState extends State<homepage> {
   List<String> des = [
     "SPAM son mensajes no solicitados, sobre todo de tipo publicitario, y que son enviados de forma masiva.",
     "El teletrabajo, o trabajo a distancia, permite trabajar en un lugar diferente a la oficina.",
-    "Wifi, señal inalambrica",
+    "Las contraseñas se utilizan para verificar la identidad del usuario, dicha clave debe ser robusta para evitar robos de esta.",
   ];
 
   Widget customcard(String langname, String image, String des) {
@@ -31,12 +32,6 @@ class _homepageState extends State<homepage> {
       ),
       child: InkWell(
         onTap: () {
-          // Navigator.of(context).pushReplacement(MaterialPageRoute(
-          //   // in changelog 1 we will pass the langname name to ther other widget class
-          //   // this name will be used to open a particular JSON file
-          //   // for a particular language
-          //   builder: (context) => getjson(langname),
-          // ));
           if (langname == 'SPAM') {
             Navigator.push(
               context,
@@ -44,10 +39,24 @@ class _homepageState extends State<homepage> {
                 builder: (context) => Spam(),
               ),
             );
+          } else if (langname == 'Teletrabajo') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Teletrabajo(),
+              ),
+            );
+          } else if (langname == 'Wifi') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Wifi(),
+              ),
+            );
           }
         },
         child: Material(
-          color: Colors.indigoAccent,
+          color: Colors.yellow[700],
           elevation: 10.0,
           borderRadius: BorderRadius.circular(25.0),
           child: Container(
@@ -115,7 +124,7 @@ class _homepageState extends State<homepage> {
         title: Text(
           "ECURA",
           style: TextStyle(
-            fontFamily: "Quando",
+            fontFamily: "Alike-Regular",
           ),
         ),
       ),
