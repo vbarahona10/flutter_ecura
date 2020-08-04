@@ -32,6 +32,8 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   final myController = TextEditingController();
+  bool _obscureText = true;
+
   @override
   void dispose() {
     myController.dispose();
@@ -89,18 +91,32 @@ class _QuizPageState extends State<QuizPage> {
   Widget _crearPassword() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.0),
-      child: TextField(
-        obscureText: true,
-        style: TextStyle(fontSize: 22),
-        decoration: InputDecoration(
-            labelText: 'Contraseña',
-            icon: Icon(
-              Icons.lock,
-              color: Colors.indigo,
-            )),
-        controller: myController,
+      child: Column(
+        children: <Widget>[
+          TextField(
+            obscureText: _obscureText,
+            style: TextStyle(fontSize: 15),
+            decoration: InputDecoration(
+                suffixIcon: FlatButton.icon(
+                    icon: Icon(Icons.remove_red_eye),
+                    onPressed: _toggle,
+                    label: Text('')),
+                labelText: 'Contraseña',
+                icon: Icon(
+                  Icons.lock,
+                  color: Colors.indigo,
+                )),
+            controller: myController,
+          ),
+        ],
       ),
     );
+  }
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
   }
 
   Widget _crearBoton(LoginBloc bloc, BuildContext context) {
@@ -128,6 +144,28 @@ class _QuizPageState extends State<QuizPage> {
     print(regExp.hasMatch(password));
 
     if (regExp.hasMatch(password)) {
+      Alert(
+          context: context,
+          title: "¡Buen Trabajo!",
+          desc:
+              "Estas en lo correcto, una buena contraseña debe contener Mayúsculas, minúsculas, números y símbolos",
+          buttons: [
+            DialogButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Modules(),
+                      ));
+                },
+                // => Navigator.pop(context),
+                child: Text(
+                  "Vuelve a los modulos",
+                  style: TextStyle(color: Colors.white, fontSize: 22),
+                ))
+          ]).show();
+
+/*
       showDialog(
         context: context,
         builder: (context) {
@@ -136,23 +174,29 @@ class _QuizPageState extends State<QuizPage> {
             content: Text(
                 'Estas en lo correcto, una buena contraseña debe contener Mayúsculas, minúsculas, números y símbolos'),
             actions: <Widget>[
-              DialogButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Modules(),
-                        ));
-                  },
-                  // => Navigator.pop(context),
-                  child: Text(
-                    "Vuelve a los modulos",
-                    style: TextStyle(color: Colors.white, fontSize: 22),
-                  )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  DialogButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Modules(),
+                            ));
+                      },
+                      // => Navigator.pop(context),
+                      child: Text(
+                        "Vuelve a los modulos",
+                        style: TextStyle(color: Colors.white, fontSize: 22),
+                      )),
+                ],
+              )
             ],
           );
         },
-      );
+      );*/
     } else {
       showDialog(
           context: context,
