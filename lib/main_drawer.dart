@@ -46,6 +46,9 @@ class mainDrawer extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 80,
+          ),
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Perfil',
@@ -77,24 +80,8 @@ class mainDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Acerca de',
-                style: TextStyle(
-                  fontSize: 18,
-                )),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsScreen(),
-                  ));
-              //Navigator.pushNamed(context, '/details_screen');
-              //Navigator.of(context).pushNamed(DetailsScreen.routename);
-            },
-          ),
-          ListTile(
             leading: Icon(Icons.verified_user),
-            title: Text('Ingresar',
+            title: Text('Iniciar Sesión',
                 style: TextStyle(
                   fontSize: 18,
                 )),
@@ -110,7 +97,7 @@ class mainDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.chat),
-            title: Text('Chatea con SecutirityApp',
+            title: Text('Chatea con ecura',
                 style: TextStyle(
                   fontSize: 18,
                 )),
@@ -120,6 +107,18 @@ class mainDrawer extends StatelessWidget {
               //Navigator.pushNamed(context, '/details_screen');
               //Navigator.of(context).pushNamed(DetailsScreen.routename);
             },
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 8.0),
+            width: double.infinity,
+            height: 1.0,
+            color: Colors.grey.shade400,
+          ),
+          SizedBox(
+            height: 50,
           ),
           ListTile(
             leading: Icon(Icons.settings_applications),
@@ -132,6 +131,22 @@ class mainDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => Settings(),
+                  ));
+              //Navigator.pushNamed(context, '/details_screen');
+              //Navigator.of(context).pushNamed(DetailsScreen.routename);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.info),
+            title: Text('Acerca de',
+                style: TextStyle(
+                  fontSize: 18,
+                )),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsScreen(),
                   ));
               //Navigator.pushNamed(context, '/details_screen');
               //Navigator.of(context).pushNamed(DetailsScreen.routename);

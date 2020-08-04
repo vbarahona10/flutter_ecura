@@ -22,7 +22,7 @@ class InstruccionsWifi extends StatelessWidget {
                 child: Padding(
               padding: EdgeInsets.all(0.0),
               child: Image.asset(
-                "images/instruccionesSpam.png",
+                "images/instruccioneswifi.png",
                 width: 600,
                 height: 600,
               ),

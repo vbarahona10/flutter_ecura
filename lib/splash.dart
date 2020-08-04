@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:quizstar/src/pages/profile/acercadepage.dart';
+import 'package:quizstar/src/pages/modules/modules.dart';
 
 class splashscreen extends StatefulWidget {
   @override
@@ -11,9 +11,9 @@ class _splashscreenState extends State<splashscreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => DetailsScreen(),
+        builder: (context) => Modules(),
       ));
     });
   }

@@ -143,6 +143,7 @@ class Msg extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   new Text(defaultUserName,
+                      // ignore: deprecated_member_use
                       style: Theme.of(ctx).textTheme.subhead),
                   new Container(
                     margin: const EdgeInsets.only(top: 6.0),

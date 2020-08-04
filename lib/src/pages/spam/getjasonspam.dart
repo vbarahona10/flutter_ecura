@@ -70,6 +70,7 @@ class _quizpageState extends State<quizpage> {
   int j = 1;
   int timer = 30;
   String showtimer = "30";
+  // ignore: non_constant_identifier_names
   var random_array;
 
   Map<String, Color> btncolor = {
@@ -88,6 +89,7 @@ class _quizpageState extends State<quizpage> {
   genrandomarray() {
     var distinctIds = [];
     var rand = new Random();
+    // ignore: unused_local_variable
     for (int i = 0;;) {
       distinctIds.add(rand.nextInt(10));
       random_array = distinctIds.toSet().toList();

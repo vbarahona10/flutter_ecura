@@ -1,20 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quizstar/home.dart';
 import 'package:quizstar/src/pages/spam/iniciospam.dart';
-import 'package:quizstar/src/pages/spam/spamquiz.dart';
 import 'package:video_player/video_player.dart';
 import '../../../main_drawer.dart';
-import 'spamquiz.dart';
-
-//class Spam extends StatelessWidget {
-// @override
-// Widget build(BuildContext context) {
-//   return Scaffold(
-//       appBar: AppBar(
-//     title: Text('SPAM1'),
-//   ));
-// }
-//}
 
 class Spam extends StatefulWidget {
   @override

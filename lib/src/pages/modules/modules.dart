@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quizstar/main_drawer.dart';
+import 'package:quizstar/src/pages/modules/pages/suscriptionpage.dart';
 import '../../../main_drawer.dart';
 import '../../../home.dart';
 
@@ -18,7 +19,7 @@ class _moduleState extends State<Modules> {
 
   List<String> des = [
     "Principiante",
-    "Intermiedio.",
+    "Intermiedio",
     "Avanzado",
   ];
 
@@ -49,6 +50,20 @@ class _moduleState extends State<Modules> {
               context,
               MaterialPageRoute(
                 builder: (context) => homepage(),
+              ),
+            );
+          } else if (langname == 'Intermedio') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Suscription(),
+              ),
+            );
+          } else if (langname == 'Avanzado') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Suscription(),
               ),
             );
           }

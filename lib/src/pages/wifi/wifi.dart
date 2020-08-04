@@ -5,16 +5,6 @@ import 'package:video_player/video_player.dart';
 import '../../../main_drawer.dart';
 import '../spam/spamquiz.dart';
 
-//class Spam extends StatelessWidget {
-// @override
-// Widget build(BuildContext context) {
-//   return Scaffold(
-//       appBar: AppBar(
-//     title: Text('SPAM1'),
-//   ));
-// }
-//}
-
 class Wifi extends StatefulWidget {
   @override
   VideoState createState() => VideoState();
