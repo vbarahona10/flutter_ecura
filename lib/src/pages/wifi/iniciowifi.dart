@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quizstar/src/pages/spam/instrucspam.dart';
 import 'package:quizstar/src/pages/spam/spamquiz.dart';
+import 'package:quizstar/src/pages/wifi/instruccionswifi.dart';
 import 'package:quizstar/src/pages/wifi/wifiquiz.dart';
 
 class Iniciowifi extends StatefulWidget {
@@ -68,7 +69,8 @@ class _InicioState extends State<Iniciowifi> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Instrucspam()),
+                      MaterialPageRoute(
+                          builder: (context) => InstruccionsWifi()),
                     );
                   },
                   child: Image.asset(

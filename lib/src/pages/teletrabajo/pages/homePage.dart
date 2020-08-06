@@ -48,9 +48,18 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               "$points/800",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
             ),
-            Text("puntos"),
+            Text(
+              "puntos",
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
+            ),
             SizedBox(
               height: currentOrientation == Orientation.portrait
                   ? hei * 0.1
@@ -74,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                     height: hei * 0.4,
                     child: Center(
                         child: FlatButton(
-                      color: Colors.blue,
+                      color: Colors.yellow[700],
                       textColor: Colors.white,
                       disabledColor: Colors.grey,
                       disabledTextColor: Colors.black,
@@ -104,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: Text(
                         "Jugar de nuevo",
-                        style: TextStyle(fontSize: 20.0),
+                        style: TextStyle(fontSize: 50.0),
                       ),
                     )),
                   )
