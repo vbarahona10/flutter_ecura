@@ -24,6 +24,8 @@ class _homepageState extends State<homepage> {
     "Las contraseñas se utilizan para verificar la identidad del usuario, dicha clave debe ser robusta para evitar robos de esta.",
   ];
 
+  bool isSwitched = false;
+
   Widget customcard(String langname, String image, String des) {
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -107,6 +109,22 @@ class _homepageState extends State<homepage> {
                     textAlign: TextAlign.justify,
                   ),
                 ),
+                Text(
+                  'Decargar Video',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.indigo,
+                      fontFamily: "Quando"),
+                ),
+                Switch(
+                  value: isSwitched,
+                  onChanged: (bool newValue) {
+                    setState(() {
+                      isSwitched = newValue;
+                    });
+                  },
+                )
               ],
             ),
           ),
